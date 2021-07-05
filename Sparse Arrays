@@ -1,0 +1,26 @@
+/*
+ * Complete the 'matchingStrings' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. STRING_ARRAY strings
+ *  2. STRING_ARRAY queries
+ */
+ 
+ 
+ vector<int> matchingStrings(vector<string> strings, vector<string> queries) {
+    vector<int> result;
+    
+    for(int i=0; i<strings.size(); i++){
+        for(int j=0; j<queries.size(); j++){
+            if(queries[j]==strings[i]){
+                while(result.size()<queries.size()){
+                    result.push_back(0);
+                }
+                result.at(j)= result.at(j)+1;
+            }
+        }
+    }
+    
+    return result;
+}
