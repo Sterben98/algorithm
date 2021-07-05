@@ -1,0 +1,28 @@
+/*
+ * Complete the 'findDigits' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER n as parameter.
+ */
+ 
+ int findDigits(int n) {
+    
+    vector<int> cifre;
+    int count=0;
+    int temp=n;
+    
+    while(n>=1){
+        cifre.push_back(n%10);
+        n=n/10;
+    }
+    
+    for (int i : cifre) {
+        if(i>0){
+            if((temp%i)==0){
+                count++;
+            }
+        }
+    }
+    
+    return count;
+}
